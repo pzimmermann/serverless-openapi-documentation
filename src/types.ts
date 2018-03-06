@@ -13,6 +13,7 @@ export interface IDefinitionConfig {
   description: string;
   version?: string;
   models: IModels[];
+  securitySchemes: object; // FIXME
 }
 
 export interface IDefinitionType {

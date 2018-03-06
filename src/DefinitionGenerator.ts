@@ -31,6 +31,7 @@ export class DefinitionGenerator {
       description = '',
       version = uuid.v4(),
       models,
+      securitySchemes,
     } = this.config;
 
     merge(this.definition, {
@@ -53,6 +54,9 @@ export class DefinitionGenerator {
           dereference(model.schema),
         );
       }
+    }
+    if (securitySchemes) {
+      this.definition.components.securitySchemes = securitySchemes;
     }
 
     return this;
